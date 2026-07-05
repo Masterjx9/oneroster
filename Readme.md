@@ -84,8 +84,6 @@ You can request a token with `client_credentials` against `/ims/oneroster/v1p1/t
 
 ## Assignment Workflow Endpoints
 
-The missing assignment workflow is now implemented with three dedicated endpoints that sit beside the existing OneRoster API.
-
 ### 1. Save provider configuration
 
 ```http
