@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+
+# Flask / local runtime
+instance/
+
+# Vue / Vite / Node
+OneRoster-Frontend/node_modules/
+OneRoster-Frontend/dist/
+OneRoster-Frontend/.vite/
+OneRoster-Frontend/coverage/
+OneRoster-Frontend/test-results/
+OneRoster-Frontend/playwright-report/
+OneRoster-Frontend/*.tsbuildinfo
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
