@@ -16,7 +16,7 @@ export const ALL_SCOPES = [
   GRADEBOOK_DELETE_SCOPE,
 ] as const
 
-export type AppView = 'dashboard' | 'schools' | 'classes' | 'people' | 'gradebook' | 'resources'
+export type AppView = 'dashboard' | 'schools' | 'classes' | 'people' | 'gradebook' | 'resources' | 'ingestion'
 export type PersonMode = 'students' | 'teachers'
 export type ResourceMode = 'classes' | 'courses'
 
@@ -111,6 +111,7 @@ export const VIEW_OPTIONS: Array<{ value: AppView; label: string; description: s
   { value: 'people', label: 'People', description: 'Students and teachers across the system.' },
   { value: 'gradebook', label: 'Gradebook', description: 'Line items and results by class.' },
   { value: 'resources', label: 'Resources', description: 'Course and class learning materials.' },
+  { value: 'ingestion', label: 'Ingestion', description: 'Save provider configs, sync copied data, and inspect imports.' },
 ] as const
 
 export interface MetricCard {

@@ -6,6 +6,7 @@ import Classes from './components/Classes.vue'
 import Resources from './components/Resources.vue'
 import OverviewHub from './components/Overview-Hub.vue'
 import OverviewSnapshots from './components/Overview-Snapshots.vue'
+import Ingestion from './components/Ingestion.vue'
 import { computed, onMounted, ref, watch } from 'vue'
 import { useStorage } from '@vueuse/core'
 import {
@@ -999,6 +1000,10 @@ onMounted(async () => {
 
       <section v-else-if="activeView === 'resources'" class="min-w-0 space-y-6">
         <Resources />
+      </section>
+
+      <section v-else-if="activeView === 'ingestion'" class="min-w-0 space-y-6">
+        <Ingestion />
       </section>
     </div>
   </div>

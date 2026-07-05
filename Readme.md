@@ -129,6 +129,20 @@ GET /ims/oneroster/v1p1/provider-configurations/{config_id}/data?resource=classe
 
 This returns the latest successful copied dataset for that stored provider configuration without calling the remote provider again.
 
+### Ingestion UI
+
+The SPA includes an **Ingestion** view that drives these three assignment endpoints in order:
+
+1. **Save Configuration** calls `POST /ims/oneroster/v1p1/provider-configurations`
+2. **Sync Copied Dataset** calls `POST /ims/oneroster/v1p1/provider-configurations/{config_id}/sync`
+3. **Read Copied Data** calls `GET /ims/oneroster/v1p1/provider-configurations/{config_id}/data`
+
+The ingestion view can also read back a single copied resource with:
+
+```http
+GET /ims/oneroster/v1p1/provider-configurations/{config_id}/data?resource=classes
+```
+
 ## Data Source
 
 - The working sample dataset is stored in SQLite.
@@ -166,13 +180,6 @@ This returns the latest successful copied dataset for that stored provider confi
 - The repo goes beyond rostering-only minimum scope by also including resource and gradebook surfaces.
 - The copied dataset is stored locally as imported provider records rather than overwriting the core sample OneRoster tables.
 - The final repository link is not something code can invent locally; add your GitHub URL after you publish.
-
-## Deployment Notes
-
-- The Docker build now uses a Node 22 frontend build stage and a Python runtime stage.
-- `requirements.txt` has been added so the backend image can install Python dependencies cleanly.
-- The TypeScript configs were updated to silence the TypeScript 6 `baseUrl` deprecation error that was breaking Fly builds.
-- The Rolldown `INVALID_ANNOTATION` lines from `@vueuse/core` are warnings; the production frontend build still completes successfully.
 
 ## Key Paths
 
